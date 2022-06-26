@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+src/
+
+# git
+.gitignore
+
+# Docker
+Dockerfiles
+
+# env Files
+.env
+
+# Misc
+LICENSE.md
+README.md
+.DS_Store
+webpack.config.js
+webpack.config.prod.js
+tsconfig.json
