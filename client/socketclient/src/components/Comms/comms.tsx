@@ -1,17 +1,18 @@
-import { Fragment } from "react";
-import AppBar from "@mui/material/AppBar";
-import CssBaseline from "@mui/material/CssBaseline";
-import Toolbar from "@mui/material/Toolbar";
+import { Fragment, lazy } from "react";
 import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemText from "@mui/material/ListItemText";
 import Avatar from "@mui/material/Avatar";
 import MeetingRoomIcon from "@mui/icons-material/MeetingRoom";
 import CommentIcon from "@mui/icons-material/Comment";
 import Box from '@mui/material/Box';
+
+const AppBar = lazy(() => import("@mui/material/AppBar"));
+const CssBaseline = lazy(() => import("@mui/material/CssBaseline"));
+const Toolbar = lazy(() => import("@mui/material/Toolbar"));
+const IconButton = lazy(() => import("@mui/material/IconButton"));
+const List = lazy(() => import("@mui/material/List"));
+const ListItemAvatar = lazy(() => import("@mui/material/ListItemAvatar"));
 
 const messages = [
   {
