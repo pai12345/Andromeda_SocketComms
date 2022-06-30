@@ -21,7 +21,7 @@ const Redirect = lazy(() =>
   }))
 );
 
-const comms = lazy(() => import("../Comms/comms")) as any;
+const Comms = lazy(() => import("../Comms/comms")) as any;
 const notfound = lazy(() => import("../Notfound/notfound")) as any;
 
 const App = () => {
@@ -36,7 +36,7 @@ const App = () => {
     >
       <NoSsr>
       <Switch>
-            <Route path="/" exact component={comms} />
+            <Route path="/" exact component={Comms} />
             <Route path="/NotFound" component={notfound} />
             <Redirect to="/NotFound" />
       </Switch>
