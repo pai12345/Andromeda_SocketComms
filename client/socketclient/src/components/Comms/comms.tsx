@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography";
 import ListItem from "@mui/material/ListItem";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import generatesocket from "../../service/socket";
 
 const NoSsr = lazy(() => import("@mui/material/NoSsr"));
 const AppBar = lazy(() => import("@mui/material/AppBar"));
@@ -34,8 +35,9 @@ const Comms = memo(() => {
     newObj.primary = "";
     const newState = [...state];
     newState.push(newObj);
-    console.log(newState);
+    // console.log(newState);
     setState(newState);
+    generatesocket().connection()
   }, [state]);
 
   return (
