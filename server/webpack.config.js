@@ -15,6 +15,10 @@ module.exports = {
     path: path_dist,
     publicPath: "dist",
   },
+  externals: {
+    bufferutil: "bufferutil",
+    "utf-8-validate": "utf-8-validate",
+  },
   devtool: "inline-source-map",
 
   module: {
