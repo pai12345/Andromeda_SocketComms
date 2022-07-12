@@ -8,7 +8,6 @@ import { generic_status } from "../utility/util";
 import { Server as Server_type } from "http";
 import { Server as socket_server } from "socket.io";
 import { createServer } from "http";
-// import generateController from "../controller/socket";
 
 /**
  * Class - Server
@@ -44,14 +43,6 @@ class Server {
     initialise_socket(app: Server_type) {
         const cors_option = { origin: "*" };
         const io = new socket_server(app, { cors: cors_option });
-        io.on("connection", (socket_instance) => {
-            // generateController().Chat_room(socket_instance);
-            console.log(`Socket Client connected`);
-            socket_instance.on("posts", (data: any) => {
-                console.log(data);
-                socket_instance.emit("ack", { actions: "success", post: "success" });
-            });
-        });
         io.engine.on("connection_error", (err: any) => {
             console.log({
                 req: err.req,
@@ -59,13 +50,8 @@ class Server {
                 message: err.message,
                 context: err.context
             });
-            // return {
-            //     req: err.req,
-            //     code: err.code,
-            //     message: err.message,
-            //     context: err.context
-            // }
         });
+        return io;
     }
 }
 

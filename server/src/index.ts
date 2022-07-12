@@ -1,11 +1,15 @@
 import server from "../src/packages/server";
 import { http_status } from "./utility/util";
+import initialiseSocket from "./service/socket"
 
-//Initialse Server
+//Initialse HTPP Server
 const initialse_server = server.initialise_server();
 
-//Initialse Socket
-server.initialise_socket(initialse_server);
+//Initialse Socket Server
+const io = server.initialise_socket(initialse_server);
+
+//Initialise Socket
+initialiseSocket(io);
 
 //Server graceful exit
 process.on("SIGTERM", () => {
